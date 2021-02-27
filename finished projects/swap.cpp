@@ -19,6 +19,11 @@ void loop()
     // Only power after 0.2 sec
     digitalWrite(blueLedPin, state);
     delay(200);
+    // If the button is unpressed, return a constant red light
+    if (state == false)
+    {
+        digitalWrite(redLedPin, HIGH);
+    }
     // If the button is pressed, return a flickering blue light
     if (state == true)
     {
@@ -28,10 +33,6 @@ void loop()
         delay(100);
         digitalWrite(redLedPin, LOW);
         delay(1);
-    }
-    // If the button is unpressed, return a constant red light
-    if (state == false)
-    {
-        digitalWrite(redLedPin, HIGH);
+        
     }
 }
