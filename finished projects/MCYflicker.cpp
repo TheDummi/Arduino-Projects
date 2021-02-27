@@ -26,6 +26,16 @@ void loop()
         delay(100);
         digitalWrite(redLed, LOW);
         digitalWrite(greenLed, LOW);
+        digitalWrite(greenLed, HIGH);
+        digitalWrite(blueLed, HIGH);
+        delay(100);
+        digitalWrite(greenLed, LOW);
+        digitalWrite(blueLed, LOW);
+        digitalWrite(redLed, HIGH);
+        digitalWrite(blueLed, HIGH);
+        delay(100);
+        digitalWrite(blueLed, LOW);
+        digitalWrite(redLed, LOW);
     }
     else if (state == true)
     {
@@ -34,7 +44,7 @@ void loop()
         delay(100);
         digitalWrite(greenLed, LOW);
         digitalWrite(blueLed, LOW);
-        }
+    }
     else if (state2 == true)
     {
         digitalWrite(redLed, HIGH);
