@@ -2,9 +2,9 @@
 
 byte blueLed = 8;
 byte greenLed = 7;
-byte redLed = 4;
+byte redLed = 12;
 byte switch1 = 2;
-byte switch2 = 12;
+byte switch2 = 13;
 bool state;
 bool state2;
 
