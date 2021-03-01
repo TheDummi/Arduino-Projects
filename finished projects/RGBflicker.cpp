@@ -1,10 +1,10 @@
 #include <Arduino.h>
 
-byte blueLed = 8;
-byte greenLed = 7;
-byte redLed = 12;
+byte blueLed = 12;
+byte greenLed = 8;
+byte redLed = 13;
 byte switch1 = 2;
-byte switch2 = 13;
+byte switch2 = 7;
 bool state;
 bool state2;
 
@@ -13,6 +13,7 @@ void setup()
     pinMode(blueLed, OUTPUT);
     pinMode(greenLed, OUTPUT);
     pinMode(redLed, OUTPUT);
+    Serial.begin(9600);
 }
 
 void loop()
@@ -30,6 +31,9 @@ void loop()
         digitalWrite(redLed, HIGH);
         delay(100);
         digitalWrite(redLed, LOW);
+        delay(100);
+        Serial.println("state: " + state);
+        Serial.println("state 2: " + state2);
     }
     else if (state == true)
     {
@@ -38,6 +42,9 @@ void loop()
         digitalWrite(blueLed, LOW);
         digitalWrite(greenLed, LOW);
         digitalWrite(redLed, LOW);
+        delay(100);
+        Serial.println("state: " + state);
+        Serial.println("state 2: " + state2);
     }
     else if (state2 == true)
     {
@@ -46,13 +53,17 @@ void loop()
         digitalWrite(redLed, HIGH);
         delay(100);
         digitalWrite(redLed, LOW);
+        delay(100);
+        Serial.println("state: " + state);
+        Serial.println("state 2: " + state2);
     }
     else
     {
         digitalWrite(blueLed, LOW);
-        digitalWrite(greenLed, HIGH);
         digitalWrite(redLed, LOW);
-        delay(100);
         digitalWrite(greenLed, LOW);
+        delay(100);
+        Serial.println("state: " + state);
+        Serial.println("state 2: " + state2);
     }
 }
