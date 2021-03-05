@@ -1,27 +1,26 @@
 #include <Arduino.h>
 
-byte redLed = 8;
-byte blueLed = 7;
-int fade = 0;
-int fadeAmount = 5;
+byte ledPin = 9;
+byte switchPin = 2;
+
+bool state;
 
 void setup()
 {
-    pinMode(redLed, OUTPUT);
+    pinMode(switchPin, INPUT);
+    pinMode(ledPin, OUTPUT);
 }
 
 void loop()
 {
-    analogWrite(redLed, fade);
-    analogWrite(blueLed, fade);
-
-    // Change the fade by adding fadeAmount
-    fade = fade + fadeAmount;
-
-    // If fade is smaller or equal to 0 or bigger or equal to 255, negative fadeAmountb
-    if (fade <= 0 || fade >= 255)
+    for (int fadeValue = 0; fadeValue <= 255; fadeValue += 1)
     {
-        fadeAmount = -fadeAmount;
+        analogWrite(ledPin, fadeValue);
+        delay(10);
     }
-    delay(10);
+    for (int fadeValue = 255; fadeValue >= 0; fadeValue -= 1)
+    {
+        analogWrite(ledPin, fadeValue);
+        delay(10);
+    }
 }
