@@ -1,13 +1,9 @@
 #include <Arduino.h>
 
 byte ledPin = 9;
-byte switchPin = 2;
-
-bool state;
 
 void setup()
 {
-    pinMode(switchPin, INPUT);
     pinMode(ledPin, OUTPUT);
 }
 
